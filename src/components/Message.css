@@ -1,0 +1,26 @@
+.Message {
+    text-align: center;
+  }
+  
+  .center-div {
+    position: absolute;
+    margin: auto;
+    top: 200px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 400px;
+    height: 400px;
+  }
+  
+  .center-title {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+  }
+  

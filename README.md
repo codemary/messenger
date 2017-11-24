@@ -1,3 +1,27 @@
+### Install
+
+```
+$ yarn install
+```
+
+### Start Twilio API Server
+
+```
+node server.js
+```
+### Start React Server
+
+```
+$ yarn start
+```
+
+### Documentation
+
+The documentation is in the `docs` folder. The design snapshots are in `docs/design`.
+
+
+
+----------------------------------
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>

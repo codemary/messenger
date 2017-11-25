@@ -1,6 +1,6 @@
 ### Install
 
-Prerequistes: 
+Prerequisites: 
 1. node: v7.10.0
 2. yarn: 0.27.5
 3. npm: 5.5.1

@@ -50,7 +50,7 @@ class Api extends Component {
         return (
 
             <div className="center-div">
-                <h3> Hello {this.props.location.state.username} ! </h3>
+                <h3> Hello {this.props.currentUser || this.props.location.state.username} ! </h3>
 
                 <div className="pt-input-group .pt-large">
                     <input
@@ -65,6 +65,7 @@ class Api extends Component {
                         onClick={this.handleAPIKeyInputClick}
                     />
                 </div>
+                {/* label will be rendered if api key is invalid */}
                 {this.state.apiKeyInvalid && <label className="pt-label">
                     <span> API Key is invalid</span>
                 </label>}

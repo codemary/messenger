@@ -4,7 +4,6 @@ import {
 	Route,
 	Redirect
 } from 'react-router-dom';
-
 import './App.css';
 
 import User from './components/User';
@@ -13,20 +12,23 @@ import Api from './components/Api';
 
 const auth = {
 	currentUserExists() {
-		// todo check local storge if  currentUsername exists
+		// todo check local storge if currentUsername exists
 		if (localStorage.getItem("currentUser") === null) {
 			return false
 		} else {
 			return true;
 		}
 
+	},
+	currentUser() {
+		return localStorage.getItem("currentUser");
 	}
 }
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
 	<Route {...rest} render={props => (
 		auth.currentUserExists() ? (
-			<Component {...props} />
+			<Component {...props} currentUser={auth.currentUser()} />
 		) : (
 				<Redirect to={{
 					pathname: '/',
@@ -45,12 +47,14 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
+				{/*1.navbar */}
 				<nav className="pt-navbar pt-dark">
 					<div className="pt-navbar-group center-title">
 						<div className="pt-navbar-heading">Messenger</div>
 					</div>
 				</nav>
 
+				{/* navigation of components */}
 				<Router>
 					<div>
 						<Route exact path="/" component={User} />

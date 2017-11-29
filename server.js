@@ -7,8 +7,10 @@ const app = express();
 
 app.use('/', express.static('public'));
 
+// send SMS route handler
 app.post('/sendsms', bodyParser.json(), (req, res) => {
     console.log(req.body);
+
     var client = new twilio(req.body.sid, req.body.token);
     client.messages
         .create({
@@ -19,6 +21,7 @@ app.post('/sendsms', bodyParser.json(), (req, res) => {
         .then((message) => console.log(message.sid));
 });
 
+// call route handler called by message.js
 app.post('/call', bodyParser.json(), (req, res) => {
     console.log(req.body);
     var client = new twilio(req.body.sid, req.body.token);

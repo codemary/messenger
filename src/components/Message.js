@@ -68,7 +68,7 @@ class Message extends Component {
                 "sid": this.props.location.state.username,
                 "token": this.props.location.state.apiKey,
                 "recipient": this.state.phone,
-                "body": this.state.message
+                "message": this.state.message
             })
         });
     }

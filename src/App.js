@@ -22,13 +22,16 @@ const auth = {
 	},
 	currentUser() {
 		return localStorage.getItem("currentUser");
+	},
+	currentAPIKey() {
+		return localStorage.getItem(this.currentUser());
 	}
 }
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
 	<Route {...rest} render={props => (
 		auth.currentUserExists() ? (
-			<Component {...props} currentUser={auth.currentUser()} />
+			<Component {...props} currentUser={auth.currentUser()} currentAPIKey={auth.currentAPIKey()} />
 		) : (
 				<Redirect to={{
 					pathname: '/',

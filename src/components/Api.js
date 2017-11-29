@@ -35,12 +35,15 @@ class Api extends Component {
             return
         }
 
-        localStorage.setItem(this.props.location.state.username, this.state.apiKey)
+        var currentUser = this.props.currentUser || this.props.location.state.username;
+
+        localStorage.setItem(currentUser, this.state.apiKey)
+
 
         this.props.history.push({
             pathname: '/message',
             state: {
-                username: this.props.location.state.username,
+                username: currentUser,
                 apiKey: this.state.apiKey
             }
         })
